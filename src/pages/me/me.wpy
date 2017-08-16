@@ -1,0 +1,189 @@
+<style lang="less">
+	page{
+		background-color: #f3f3f3;
+	}
+	.leaguer_info{
+		padding:30rpx 20rpx 20rpx;
+		border-bottom: 1rpx solid #e6e8e7;
+		background-color: #fff;
+		.avater{
+			width: 100rpx;
+			height: 100rpx;
+			display: inline-block;
+			margin: 0 30rpx;
+		}
+		.leaguer{
+			display: inline-block;
+			vertical-align:top;
+		}
+		.name{
+			font-size: 40rpx;
+			display: block;
+			margin-top:6rpx;
+		}
+		.vip{
+			width:50rpx;
+			height:30rpx;
+			vertical-align:middle;
+			margin-right:10rpx;
+		}
+		.role{
+			font-size: 28rpx;
+			color: #a4a4a4;
+		}
+	}
+	.leaguer_foot{
+		border-bottom: 1rpx solid #e6e8e7;
+		background-color: #fff;
+		.l_item{
+			display: inline-block;
+			width: 50%;
+			text-align: center;
+			padding:20rpx 0;
+			position: relative;
+		}
+		.l_item .e_top{
+			display: block;
+			font-size: 28rpx;
+			color: #a4a4a4;
+		}
+		.l_item .e_foot{
+			font-size: 34rpx;
+		}
+	}
+	.leaguer_foot .l_left:after{
+		content: '';
+		height: 80rpx;
+		display: inline-block;
+		border-right: 1px solid #e6e8e7;
+		position: absolute;
+		right: 0;
+		top: 18rpx;
+	}
+	.my_order{
+		margin-top: 30rpx;
+		background-color: #fff;
+		border-bottom: 1rpx solid #e6e8e7;
+		.title{
+			padding: 20rpx;
+			border-bottom: 1rpx solid #e6e8e7;
+			.t_img{
+				float: left;
+				width: 60rpx;
+				height: 60rpx;
+			}
+			.t_name{
+				float: left;
+				font-size: 34rpx;
+				margin-left: 20rpx;
+				margin-top: 12rpx;
+			}
+			.t_check{
+				float: right;
+				font-size: 30rpx;
+				color: #a4a4a4;
+				margin-left: 20rpx;
+				margin-top: 12rpx;
+			}
+		}
+	}
+	.my_order .title:after{
+		content: '';
+		display: block;
+		clear: both;
+	}
+	.order_item_box{
+		padding: 40rpx 20rpx;
+		.order_item{
+			width: 25%;
+			display: inline-block;
+			text-align: center;
+		}
+		.order_item .o_img{
+			display: block;
+			width:80rpx;
+			height:65rpx;
+			margin:auto;
+			margin-bottom: 10rpx;
+		}
+		.order_item .o_text{
+			font-size: 30rpx;
+			color: #404040;
+		}
+	}
+</style>
+
+<template>
+	<view class="leaguer_info">
+		<image class="avater" src="../../images/people.png"></image>
+		<view class="leaguer">
+			<text class="name">宋慧乔</text>
+			<image class="vip" src="../../images/vip.png"></image>
+			<text class="role">普通会员</text>
+		</view>
+	</view>
+	<view class="leaguer_foot">
+		<view class="l_item l_left">
+			<text class="e_top">余额</text>
+			<text class="e_foot">23.40</text>
+		</view>
+		<view class="l_item l_right">
+			<text class="e_top">积分</text>
+			<text class="e_foot">300</text>
+		</view>
+	</view>
+	<view class="my_order">
+		<view class="title">
+			<image class="t_img" src="../../images/order_1.png"></image>
+			<text class="t_name">我的订单</text>
+			<text class="t_check">查看全部订单</text>
+		</view>
+		<view class="order_item_box">
+			<view class="order_item">
+				<image class="o_img" src="../../images/order_2.png"></image>
+				<text class="o_text">待付款</text>
+			</view>
+			<view class="order_item">
+				<image class="o_img" src="../../images/order_3.png"></image>
+				<text class="o_text">待发货</text>
+			</view>
+			<view class="order_item">
+				<image class="o_img" src="../../images/order_4.png"></image>
+				<text class="o_text">待收货</text>
+			</view>
+			<view class="order_item">
+				<image class="o_img" src="../../images/order_5.png"></image>
+				<text class="o_text">待评价</text>
+			</view>
+		</view>
+	</view>
+</template>
+
+<script>
+    import wepy from 'wepy'
+    import util from "../../util/util"
+    export default class Cart extends wepy.page{
+        config={
+            navigationBarTitleText: '会员中心'
+        }
+        components = {
+          
+        }
+        data = {
+            
+        }
+        methods = {
+            
+        }
+        event = {
+            
+        }
+        watch = {
+            
+        }
+        async onLoad(option){
+            
+        }   
+
+    }
+</script>

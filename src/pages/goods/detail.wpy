@@ -1,0 +1,169 @@
+<style lang="less">
+page{
+    background-color: #f3f3f3;
+    padding-bottom: 240rpx;
+}
+.detail_top{
+    font-size:30rpx;
+    height:106rpx;
+    line-height:106rpx;
+    text-align:center;
+    background:#f7f7f7 url('../../images/button.png') no-repeat bottom;
+    background-size:contain;
+    /*position:fixed;*/
+    width:100%;
+    z-index:100;
+}
+.detail_top .s{
+    display: inline-block;
+    width: 50%;
+    position: relative;
+}
+.detail_top .s.border:after{
+    content: '';
+    border-right: 1px solid #ddd;
+    position: absolute;
+    top:0;
+    right:0;
+    height:106rpx;
+}
+.explain{
+    padding: 20rpx;
+    border-bottom:1px solid #e3e3e3;
+    background-color: #fff;
+}
+.explain .b{
+    display: block;
+    font-size: 30rpx;
+    margin-bottom: 10rpx;
+}
+.explain .r{
+    display: block;
+    font-size: 24rpx;
+    color: #ff5b5b;
+}
+.item_foot{
+    margin-top: 25rpx;
+}
+.item_foot:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+.item_foot .price{
+    font-size: 40rpx;
+    color: #ff5b5b;
+    text-align: left;
+    float: left;
+}
+.item_foot .count{
+    font-size: 26rpx;
+    color: #a4a4a4;
+    float: right;
+    text-align: right;
+    margin-top: 10rpx;
+}
+.choice{
+    background-color: #fff;
+    padding: 20rpx;
+}
+.choice.title{
+    font-size: 28rpx;
+    margin-bottom: 10rpx;
+}
+.choice .choice_con{
+    margin: 20rpx 0;
+}
+.choice_item{
+    width: 156rpx;
+    height: 64rpx;
+    text-align: center;
+    line-height: 64rpx;
+    display: inline-block;
+    background-color: #fafafa;
+    border-radius: 6rpx;
+    font-size: 28rpx;
+    border: 2rpx solid #939393;
+    margin: 10rpx;
+}
+.choice_item.choosed{
+    background-color: #4fbd7b;
+    color: #fff;
+    border: 2rpx solid #4fbd7b;
+}
+.choice_item.disabled{
+    opacity: .6;
+}
+</style>
+<template>
+    <view class="detail_top">
+        <text class="s border" @tap="toHome">商城首页</text>
+        <text class="s">更多商品</text>
+    </view>
+    <scroll-view>
+        <swiper :img="imgUrls"></swiper>
+        <view class="explain">
+            <text class="b">1985年武当酒海原浆 500ml精装</text>
+            <text class="r">厂商直供 买的放心 喝得实惠 泸州老窖 浓香醇厚 送礼 敬老 商务</text>
+            <view class="item_foot">
+                <text class="price">￥54.00</text>
+                <text class="count">销量：2543</text>
+            </view>
+        </view>
+        <view class="choice weight">
+            <text class="title">商品重量</text>
+            <view class="choice_con">
+                <text class="choice_item choosed">5斤重</text>
+                <text class="choice_item">10斤重</text>
+                <text class="choice_item disabled">20斤重</text>
+            </view>
+        </view>
+        <view class="choice pack">
+            <text class="title">包装</text>
+            <view class="choice_con">
+                <text class="choice_item choosed">普通装</text>
+                <text class="choice_item">礼盒装</text>
+            </view>
+        </view>
+    </scroll-view>
+    <toolbar></toolbar>
+</template>
+<script>
+    import wepy from 'wepy'
+    import util from "../../util/util"
+    import Swiper from "../../components/swiper"
+    export default class Detail extends wepy.page{
+        config={
+            navigationBarTitleText: '一九八五年武当酒海原浆...'
+        }
+        components = {
+            swiper: Swiper
+        }
+        data = {
+            imgUrls: [
+              '../../images/banner2.png',
+              '../../images/banner2.png',
+              '../../images/banner2.png'
+            ]
+        }
+        methods = {
+            toHome () {
+                wx.redirectTo({
+                    url: '../home/index'
+                })
+            }
+        }
+        event = {
+            scroll (e) {
+                console.log(e)
+            }
+        }
+        watch = {
+            
+        }
+        async onLoad(option){
+            
+        }   
+
+    }
+</script>

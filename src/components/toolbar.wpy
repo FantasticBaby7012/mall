@@ -1,0 +1,134 @@
+<style lang="less">
+.toolbar_box {
+    height:100rpx;
+    width:100%;
+    position: fixed;
+    width: 100%;
+    height: 120rpx;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+}
+.toolbar{
+    background-color: #fdfdfd;
+    overflow: hidden;
+}
+.toolbar:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-top: 1px solid #e6e8e7;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+.toolbar .bar{
+    text-align: center;
+    float: left;
+    width: 25%;
+    height: 120rpx;
+    padding-top: 25rpx;
+    position: relative;
+}
+.toolbar .bar:after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    border-right: 1px solid #e6e8e7;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+}
+.toolbar .bar:nth-last-child(1):after{
+    border-right: none;
+}
+.toolbar .bar.cur{
+    color:#4fbd7b;
+}
+.toolbar .bar.cur .txt{
+    color:#4fbd7b;
+    font-size: 26rpx;
+}
+.toolbar .bar:first-child:before{
+    display: none;
+}
+.toolbar .bar:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    border-left: 1px solid #ececec;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+}
+.toolbar .bar .txt{
+    color: #404040;
+    font-size: 28rpx;
+}
+.toolbar .iconfont{
+    display: block;
+}
+</style>
+<template>
+    <view class="toolbar_box">
+        <view class="toolbar">
+            <repeat for="{{toolBar}}" key="index" index="index" item="item">
+                <navigator url="{{item.toolPath}}" class="bar">
+                    <text class="iconfont {{item.toolClass}}"></text>
+                    <text class="txt">{{item.toolText}}</text>
+                </navigator>
+            </repeat>
+        </view>
+    </view>
+</template>
+<script>
+  import wepy from 'wepy'
+  export default class toorBar extends wepy.component {
+    data = {
+      toolBar: [
+        {
+	        toolText: '首页',
+            toolPath: '../../pages/home/index',
+            toolClass: 'icon-iconhuidaoshouye'
+	      },
+	      {
+	        toolText: '商品',
+            toolPath: '../../pages/goods/index',
+            toolClass: 'icon-shouqi-01'
+	      },
+	      {
+	        toolText: '购物车',
+            toolPath: '../../pages/goods/cart',
+            toolClass: 'icon-gouwuche-01'
+	      },
+	      {
+	        toolText: '我',
+            toolPath: '../../pages/goods/me',
+            toolClass: 'icon-icongerenzhongxin-01'
+	      }
+      ]
+    }
+
+    events = {
+
+    }
+
+    methods = {
+      
+    }
+
+    onLoad () {
+      
+    }
+  }
+</script>

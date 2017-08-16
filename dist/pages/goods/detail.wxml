@@ -1,0 +1,42 @@
+
+    <view class="detail_top">
+        <text class="s border" bindtap="toHome">商城首页</text>
+        <text class="s">更多商品</text>
+    </view>
+    <scroll-view>
+        
+	<view class="image_box">
+	    <swiper class="swiper" indicator-dots="{{$swiper$indicatorDots}}" autoplay="{{$swiper$autoplay}}" interval="{{$swiper$interval}}" duration="{{$swiper$duration}}">
+	        <block wx:for="{{$swiper$img}}" wx:for-index="$swiper$index" wx:for-item="$swiper$item" wx:key="$swiper$index">
+	            <swiper-item>
+	                <image src="{{$swiper$item}}" class="image"/>
+	            </swiper-item>
+	        </block>
+	    </swiper>
+	</view>
+
+        <view class="explain">
+            <text class="b">1985年武当酒海原浆 500ml精装</text>
+            <text class="r">厂商直供 买的放心 喝得实惠 泸州老窖 浓香醇厚 送礼 敬老 商务</text>
+            <view class="item_foot">
+                <text class="price">￥54.00</text>
+                <text class="count">销量：2543</text>
+            </view>
+        </view>
+        <view class="choice weight">
+            <text class="title">商品重量</text>
+            <view class="choice_con">
+                <text class="choice_item choosed">5斤重</text>
+                <text class="choice_item">10斤重</text>
+                <text class="choice_item disabled">20斤重</text>
+            </view>
+        </view>
+        <view class="choice pack">
+            <text class="title">包装</text>
+            <view class="choice_con">
+                <text class="choice_item choosed">普通装</text>
+                <text class="choice_item">礼盒装</text>
+            </view>
+        </view>
+    </scroll-view>
+    <toolbar/>

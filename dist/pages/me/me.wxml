@@ -1,0 +1,44 @@
+
+	<view class="leaguer_info">
+		<image class="avater" src="../../images/people.png"/>
+		<view class="leaguer">
+			<text class="name">宋慧乔</text>
+			<image class="vip" src="../../images/vip.png"/>
+			<text class="role">普通会员</text>
+		</view>
+	</view>
+	<view class="leaguer_foot">
+		<view class="l_item l_left">
+			<text class="e_top">余额</text>
+			<text class="e_foot">23.40</text>
+		</view>
+		<view class="l_item l_right">
+			<text class="e_top">积分</text>
+			<text class="e_foot">300</text>
+		</view>
+	</view>
+	<view class="my_order">
+		<view class="title">
+			<image class="t_img" src="../../images/order_1.png"/>
+			<text class="t_name">我的订单</text>
+			<text class="t_check">查看全部订单</text>
+		</view>
+		<view class="order_item_box">
+			<view class="order_item">
+				<image class="o_img" src="../../images/order_2.png"/>
+				<text class="o_text">待付款</text>
+			</view>
+			<view class="order_item">
+				<image class="o_img" src="../../images/order_3.png"/>
+				<text class="o_text">待发货</text>
+			</view>
+			<view class="order_item">
+				<image class="o_img" src="../../images/order_4.png"/>
+				<text class="o_text">待收货</text>
+			</view>
+			<view class="order_item">
+				<image class="o_img" src="../../images/order_5.png"/>
+				<text class="o_text">待评价</text>
+			</view>
+		</view>
+	</view>

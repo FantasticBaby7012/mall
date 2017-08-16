@@ -1,0 +1,52 @@
+<style lang="less">
+	.image_box{
+	    height: 400rpx;
+	}
+	.image{
+	    width: 100%;
+	    height: 400rpx;
+	}
+	.swiper{
+	    height: 400rpx;
+	}
+</style>
+
+<template>
+	<view class="image_box">
+	    <swiper class="swiper" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+	        <repeat for="{{img}}" key="index" item="item" index="index">
+	            <swiper-item>
+	                <image src="{{item}}" class="image"/></image>
+	            </swiper-item>
+	        </repeat>
+	    </swiper>
+	</view>
+</template>
+
+<script>
+	import wepy from 'wepy'
+    export default class Swiper extends wepy.component {
+    	props = {
+    		img: Array
+    	}
+	    data = {
+            indicatorDots: true,
+            autoplay: true,
+            interval: 2000,
+            duration: 1000,
+            scrollTop: 0
+	    }
+
+	    events = {
+
+	    }
+
+	    methods = {
+	      
+	    }
+
+	    onLoad () {
+	        
+	    }
+    }
+</script>

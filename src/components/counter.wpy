@@ -1,0 +1,80 @@
+<style lang="less">
+	.counter{
+		width: 180rpx;
+	    display: flex;
+	    flex-direction: row;
+	    justify-content: flex-end;
+	}
+	.counter .cart_btn{
+		width: 50rpx;
+		height: 50rpx;
+		padding: 0;
+		line-height: 50rpx;
+		font-weight: bold;
+		color: #fff;
+		margin: 0;
+		background: #4fbd7b;
+		border-radius:0;
+		border: none;
+	}
+	.counter .num{
+	  width: 50rpx;
+	  text-align: center;
+	  line-height: 47rpx;
+	  font-size: 30rpx;
+	  border-top: 1rpx solid #959595;
+	  border-bottom: 1rpx solid #959595;
+	}
+	.counter .btn_add{
+	  font-size: 44rpx;
+	  border-radius: 0 5px 5px 0;
+	}
+	.counter .btn_minus{
+	  font-size: 28rpx;
+	  border-radius: 5px 0 0 5px;
+	}
+	.counter .disabled{
+		background-color: #959595;
+	}
+</style>
+
+<template>
+	<view class="counter">
+		<button class="cart_btn btn_minus" :class="{'disabled':(cartNum<=1)}" @tap="minusNum">-</button>
+		<view class="num">{{cartNum}}</view>
+		<button class="cart_btn btn_add" @tap="addNum">+</button>
+	</view>
+</template>
+
+<script>
+	import wepy from 'wepy'
+    export default class Counter extends wepy.component {
+	    data = {
+	    	
+	    }
+	    props = {
+	    	cartNum: {
+	    		type:Number,
+	    		default: 1
+	    	}
+	    }
+	    events = {
+
+	    }
+
+	    methods = {
+	    	minusNum () {
+        		if (this.cartNum > 1){
+        			this.cartNum--
+        		}
+        	},
+            addNum () {
+            	this.cartNum++
+            }
+	    }
+
+	    onLoad () {
+	      
+	    }
+    }
+</script>

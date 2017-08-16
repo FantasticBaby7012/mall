@@ -1,0 +1,65 @@
+
+	<view class="edit_bar">
+		<view class="choose">
+			<label>
+				<icon type="{{iconType}}" class="icon_all" size="20" bindtap="change"/>
+				<text class="test">全选</text>
+			</label>
+		</view>
+		<view class="edit">
+			<text>编辑</text>
+		</view>
+	</view>
+	<view class="cart_list">
+		<view class="cart_item">
+			<icon type="{{iconType}}" class="icon" size="20" bindtap="change"/>
+			<image class="cart_img" src="../../images/adver1.png"/>
+			<view class="cart_item_right">
+				<view>
+					<text class="explain">1985年武当酒海原浆500ml精装</text>
+					<text class="price">￥24.5</text>
+				</view>
+				<view class="cart_foot">
+					<text class="tag">5斤装，普通装</text>
+					<view class="counter_box">
+						
+	<view class="counter">
+		<button class="cart_btn btn_minus {{($counter1$cartNum<=1) ? 'disabled' : ''}}"  bindtap="$counter1$minusNum">-</button>
+		<view class="num">{{$counter1$cartNum}}</view>
+		<button class="cart_btn btn_add" bindtap="$counter1$addNum">+</button>
+	</view>
+
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="cart_item">
+			<icon type="{{iconType}}" class="icon" size="20" bindtap="change"/>
+			<image class="cart_img" src="../../images/example.png"/>
+			<view class="cart_item_right">
+				<view>
+					<text class="explain">1985年武当酒海原浆500ml精装</text>
+					<text class="price">￥24.5</text>
+				</view>
+				<view class="cart_foot">
+					<text class="tag">5斤装，普通装</text>
+					<view class="counter_box">
+						
+	<view class="counter">
+		<button class="cart_btn btn_minus {{($counter2$cartNum<=1) ? 'disabled' : ''}}"  bindtap="$counter2$minusNum">-</button>
+		<view class="num">{{$counter2$cartNum}}</view>
+		<button class="cart_btn btn_add" bindtap="$counter2$addNum">+</button>
+	</view>
+
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="total_box">
+		<view class="total">
+			<text class="red">合计：49.00</text>
+			<text class="gray">（不含运费）</text>
+		</view>
+		<button class="total_btn" type="primary" size="mini">去结算</button>
+	</view>

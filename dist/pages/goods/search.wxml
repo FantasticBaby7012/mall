@@ -1,0 +1,111 @@
+
+	
+	<view class="gray">
+        <input class="iconfont input" type="text" placeholder="搜索商品"/>
+        <button class="button" type="primary" size="mini">搜索</button>
+    </view>
+
+	<view class="container_search">
+		<view class="nav_left">
+			<view class="nav_item active">全部</view>
+			<view class="nav_item">婚庆类</view>
+			<view class="nav_item">醇香类</view>
+			<view class="nav_item">浓香类</view>
+		</view>
+		<view class="nav_right">
+			<view class="list_top">全部</view>
+			<view class="good_list">
+				<view class="good_item">
+					<image class="item_image" src="../../images/adver1.png"/>
+					<view class="item_right">
+						<text class="explain">国产白酒 郎牌郎酒53度老郎酒精品</text>
+						<view class="item_foot">
+							<text class="price">￥5.00~￥8.00</text>
+							<text class="count">销量：2543</text>
+						</view>
+					</view>
+				</view>
+				<view class="good_item">
+					<image class="item_image" src="../../images/example.png"/>
+					<view class="item_right">
+						<text class="explain">国产白酒 郎牌郎酒53度老郎酒精品</text>
+						<view class="item_foot">
+							<text class="price">￥5.00~￥8.00</text>
+							<text class="count">销量：2543</text>
+						</view>
+					</view>
+				</view>
+				<view class="good_item">
+					<image class="item_image" src="../../images/adver1.png"/>
+					<view class="item_right">
+						<text class="explain">国产白酒 郎牌郎酒53度老郎酒精品</text>
+						<view class="item_foot">
+							<text class="price">￥5.00~￥8.00</text>
+							<text class="count">销量：2543</text>
+						</view>
+					</view>
+				</view>
+				<view class="good_item">
+					<image class="item_image" src="../../images/example.png"/>
+					<view class="item_right">
+						<text class="explain">国产白酒 郎牌郎酒53度老郎酒精品</text>
+						<view class="item_foot">
+							<text class="price">￥5.00~￥8.00</text>
+							<text class="count">销量：2543</text>
+						</view>
+					</view>
+				</view>
+				<view class="good_item">
+					<image class="item_image" src="../../images/adver1.png"/>
+					<view class="item_right">
+						<text class="explain">国产白酒 郎牌郎酒53度老郎酒精品</text>
+						<view class="item_foot">
+							<text class="price">￥5.00~￥8.00</text>
+							<text class="count">销量：2543</text>
+						</view>
+					</view>
+				</view>
+				<view class="good_item">
+					<image class="item_image" src="../../images/example.png"/>
+					<view class="item_right">
+						<text class="explain">国产白酒 郎牌郎酒53度老郎酒精品</text>
+						<view class="item_foot">
+							<text class="price">￥5.00~￥8.00</text>
+							<text class="count">销量：2543</text>
+						</view>
+					</view>
+				</view>
+				<view class="good_item">
+					<image class="item_image" src="../../images/adver1.png"/>
+					<view class="item_right">
+						<text class="explain">国产白酒 郎牌郎酒53度老郎酒精品</text>
+						<view class="item_foot">
+							<text class="price">￥5.00~￥8.00</text>
+							<text class="count">销量：2543</text>
+						</view>
+					</view>
+				</view>
+				<view class="good_item">
+					<image class="item_image" src="../../images/example.png"/>
+					<view class="item_right">
+						<text class="explain">国产白酒 郎牌郎酒53度老郎酒精品</text>
+						<view class="item_foot">
+							<text class="price">￥5.00~￥8.00</text>
+							<text class="count">销量：2543</text>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	
+    <view class="toolbar_box">
+        <view class="toolbar">
+            <block wx:for="{{$toolbar$toolBar}}" wx:for-index="$toolbar$index" wx:for-item="$toolbar$item" wx:key="$toolbar$index">
+                <navigator url="{{$toolbar$item.toolPath}}" class="bar">
+                    <text class="iconfont {{$toolbar$item.toolClass}}"/>
+                    <text class="txt">{{$toolbar$item.toolText}}</text>
+                </navigator>
+            </block>
+        </view>
+    </view>

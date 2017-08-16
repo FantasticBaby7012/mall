@@ -1,0 +1,195 @@
+<style lang="less">
+	.edit_bar{
+		font-size:30rpx;
+	    height:106rpx;
+	    line-height:106rpx;
+	    text-align:center;
+	    background:#f7f7f7 url('../../images/button.png') no-repeat bottom;
+	    background-size:contain;
+	    position:fixed;
+		width:100%;
+		z-index: 100;
+	}
+	.choose{
+		float:left;
+		margin-left:20rpx;
+	}
+	.edit{
+		float:right;
+		padding:0 50rpx;
+		border-left: 1rpx solid #d7d7d7;
+	}
+	.cart_list{
+		padding-top: 106rpx;
+	}
+	.cart_item{
+		padding: 20rpx;
+		position: relative;
+		border-bottom: 1rpx solid #e3e3e3;
+	}
+	.cart_item_right{
+		display: inline-block;
+		width:493rpx;
+		margin-left:20rpx;
+		position: absolute;
+		padding-top: 4rpx;
+	}
+	.cart_img{
+		width: 140rpx;
+		height: 140rpx;
+		vertical-align:middle;
+	}
+	.cart_item_right .explain{
+		font-size:30rpx;
+		width:377rpx;
+		height:80rpx;
+		display:inline-block;
+		line-height:40rpx;
+	}
+	.cart_item_right .price{
+		font-size: 34rpx;
+		color: #ff5b5b;
+		margin-left:10rpx;
+		display:inline-block;
+		vertical-align:top;
+	}
+	.cart_item_right .tag{
+		font-size: 26rpx;
+		color: #999999;
+	}
+	.counter_box{
+		display: inline-block;
+		margin-left:140rpx;
+	}
+	.icon_all{
+		vertical-align: middle;
+		margin-right: 10rpx;
+		display:inline-block;
+		height:74rpx;
+	}
+	.icon{
+		display:inline-block;
+		vertical-align:middle;
+		margin-right:3px;
+	}
+
+	.total_box{
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100rpx;
+		line-height: 100rpx;
+		text-align:right;
+		padding:0 20rpx;
+		border-top: 1rpx solid #e3e3e3;
+	}
+	.total_box .total{
+		display: inline-block;
+	}
+	.total_box .total .red{
+		font-size: 34rpx;
+		color: #ff5b5b;
+	}
+	.total_box .total .gray{
+		font-size: 24rpx;
+		color: #707070;
+	}
+	.total_box .total_btn{
+		vertical-align: middle;
+		margin-left:20rpx;
+	}
+</style>
+
+<template>
+	<view class="edit_bar">
+		<view class="choose">
+			<label>
+				<icon type="{{iconType}}" class="icon_all" size="20" @tap="change">
+				<text class="test">全选</text>
+			</label>
+		</view>
+		<view class="edit">
+			<text>编辑</text>
+		</view>
+	</view>
+	<view class="cart_list">
+		<view class="cart_item">
+			<icon type="{{iconType}}" class="icon" size="20" @tap="change">
+			<image class="cart_img" src="../../images/adver1.png"></image>
+			<view class="cart_item_right">
+				<view>
+					<text class="explain">1985年武当酒海原浆500ml精装</text>
+					<text class="price">￥24.5</text>
+				</view>
+				<view class="cart_foot">
+					<text class="tag">5斤装，普通装</text>
+					<view class="counter_box">
+						<counter1 :cartNum="cartNum"></counter1>
+					</view>
+				</view>
+			</view>
+		</view>
+		<view class="cart_item">
+			<icon type="{{iconType}}" class="icon" size="20" @tap="change">
+			<image class="cart_img" src="../../images/example.png"></image>
+			<view class="cart_item_right">
+				<view>
+					<text class="explain">1985年武当酒海原浆500ml精装</text>
+					<text class="price">￥24.5</text>
+				</view>
+				<view class="cart_foot">
+					<text class="tag">5斤装，普通装</text>
+					<view class="counter_box">
+						<counter2 :cartNum="cartNum"></counter2>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="total_box">
+		<view class="total">
+			<text class="red">合计：49.00</text>
+			<text class="gray">（不含运费）</text>
+		</view>
+		<button class="total_btn" type="primary" size="mini">去结算</button>
+	</view>
+</template>
+
+<script>
+    import wepy from 'wepy'
+    import util from "../../util/util"
+    import Counter from "../../components/counter"
+    export default class Cart extends wepy.page{
+        config={
+            navigationBarTitleText: '购物车'
+        }
+        components = {
+        	counter1: Counter,
+        	counter2: Counter
+        }
+        data = {
+            cartNum: 1,
+            iconType: 'circle'
+        }
+        methods = {
+        	change () {
+        		if(this.iconType == 'circle') {
+        			this.iconType = 'success'
+        		}else{
+        			this.iconType = 'circle'
+        		}
+        	}
+        }
+        event = {
+            
+        }
+        watch = {
+            
+        }
+        async onLoad(option){
+            
+        }   
+
+    }
+</script>

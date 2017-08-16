@@ -1,0 +1,56 @@
+<style lang="less">
+	.gray{
+	    font-size:30rpx;
+	    height:106rpx;
+	    line-height:106rpx;
+	    text-align:center;
+	    background:#f7f7f7 url('../../images/button.png') no-repeat bottom;
+	    background-size:contain;
+	    position:fixed;
+		width:100%;
+		z-index: 100;
+	}
+	.gray .txt{
+	    margin-left: 10rpx;
+	}
+	.input{
+	    width: 496rpx;
+	    height: 60rpx;
+	    background-color: #fff;
+	    border-raduis: 3rpx;
+	    border: 1px solid #e3e3e3;
+	    display:inline-block;
+	    margin-top:22rpx;
+	    font-size:28rpx;
+	}
+	.button{
+	    margin-left: 20rpx;
+	    font-size: 28rpx;
+	}
+</style>
+<template>
+	<view class="gray">
+        <input class="iconfont input" type="text" placeholder="&#xe614;搜索商品">
+        <button class="button" type="primary" size="mini">搜索</button>
+    </view>
+</template>
+<script>
+	import wepy from 'wepy'
+    export default class Search extends wepy.component {
+	    data = {
+	      
+	    }
+
+	    events = {
+
+	    }
+
+	    methods = {
+	      
+	    }
+
+	    onLoad () {
+	      
+	    }
+    }
+</script>

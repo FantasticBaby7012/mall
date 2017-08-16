@@ -1,0 +1,56 @@
+
+	
+	<view class="gray">
+        <input class="iconfont input" type="text" placeholder="搜索商品"/>
+        <button class="button" type="primary" size="mini">搜索</button>
+    </view>
+
+	<view class="container_search">
+		<view class="nav_left">
+			<view class="nav_item {{(curShow==0) ? 'active' : ''}}"  bindtap="toBlock" data-wepy-params-a="全部">全部</view>
+			<view class="nav_item {{(curShow==1) ? 'active' : ''}}" bindtap="toBlock" data-wepy-params-a="婚庆类">婚庆类</view>
+			<view class="nav_item {{(curShow==2) ? 'active' : ''}}" bindtap="toBlock" data-wepy-params-a="醇香类">醇香类</view>
+			<view class="nav_item {{(curShow==3) ? 'active' : ''}}" bindtap="toBlock" data-wepy-params-a="浓香类">浓香类</view>
+		</view>
+		<view class="nav_right">
+			<view class="list_top">{{curBlock}}</view>
+			<view class="good_list">
+		        <block  wx:if="{{curShow==1 || curShow==0}}" wx:for="{{goodsList1}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+		            <view class="good_item">
+						<image class="item_image" src="{{item.picture}}"/>
+						<view class="item_right">
+							<text class="explain">{{item.explain}}</text>
+							<view class="item_foot">
+								<text class="price">{{item.price}}</text>
+								<text class="count">销量：{{item.count}}</text>
+							</view>
+						</view>
+					</view>
+		        </block>
+		        <block  wx:if="{{curShow==2 || curShow==0}}" wx:for="{{goodsList2}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+		            <view class="good_item">
+						<image class="item_image" src="{{item.picture}}"/>
+						<view class="item_right">
+							<text class="explain">{{item.explain}}</text>
+							<view class="item_foot">
+								<text class="price">{{item.price}}</text>
+								<text class="count">销量：{{item.count}}</text>
+							</view>
+						</view>
+					</view>
+		        </block>
+		        <block wx:if="{{curShow==3 || curShow==0}}" wx:for="{{goodsList3}}" wx:for-index="index" wx:for-item="item" wx:key="index">
+		            <view class="good_item">
+						<image class="item_image" src="{{item.picture}}"/>
+						<view class="item_right">
+							<text class="explain">{{item.explain}}</text>
+							<view class="item_foot">
+								<text class="price">{{item.price}}</text>
+								<text class="count">销量：{{item.count}}</text>
+							</view>
+						</view>
+					</view>
+		        </block>
+			</view>
+		</view>
+	</view>

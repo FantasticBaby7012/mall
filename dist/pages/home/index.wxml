@@ -1,0 +1,77 @@
+
+    <scroll-view class="scroll_view" scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower="lower" bindscroll="scroll">
+        
+	<view class="image_box">
+	    <swiper class="swiper" indicator-dots="{{$swiper$indicatorDots}}" autoplay="{{$swiper$autoplay}}" interval="{{$swiper$interval}}" duration="{{$swiper$duration}}">
+	        <block wx:for="{{$swiper$img}}" wx:for-index="$swiper$index" wx:for-item="$swiper$item" wx:key="$swiper$index">
+	            <swiper-item>
+	                <image src="{{$swiper$item}}" class="image"/>
+	            </swiper-item>
+	        </block>
+	    </swiper>
+	</view>
+
+        <view class="list">
+            <text class="list_title">店长推荐</text>
+            <view class="item_content">
+                <view class="item" bindtap="toDetail">
+                    <image class="item_iamge" src="../../images/example.png"/>
+                    <text class="expain">汾酒系列【20年青花瓷镇酒</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"/>
+                    <text class="expain">汾酒系列【20年青花瓷镇酒</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <text class="list_title">热销产品</text>
+            <view class="item_content">
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"/>
+                    <text class="expain">洋河系列【洋河大曲青瓷】</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"/>
+                    <text class="expain">洋河系列【洋河大曲青瓷】</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"/>
+                    <text class="expain">洋河系列【洋河大曲青瓷】</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"/>
+                    <text class="expain">洋河系列【洋河大曲青瓷】</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="to_top_box">
+            <view class="to_top" bindtap="toTop">
+                <text>顶部</text>
+            </view>
+        </view>
+    </scroll-view>

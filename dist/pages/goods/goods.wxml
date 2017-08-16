@@ -1,0 +1,69 @@
+
+    <view>
+        <!-- <view class="iconfont icon-fangdajing gray {{!isSearch?'':'hide'}}" bindtap="showSearch"><text class="txt">搜索商品</text></view>
+        <view class="gray {{isSearch?'':'hide'}}">
+            <input class="iconfont input" type="text" placeholder="&#xe614;搜索商品">
+            <button class="button" type="primary" size="mini">搜索</button>
+        </view> -->
+        <view class="iconfont icon-fangdajing gray" bindtap="showSearch"><text class="txt">搜索商品</text></view>
+    </view>
+    <scroll-view>
+        <view class="list">
+            <view class="item_content">
+                <view class="item">
+                    <image class="item_iamge" src="../../images/adver1.png"/>
+                    <text class="expain">国产白酒 郎牌郎酒53度老郎酒精品</text>
+                    <view class="item_foot">
+                        <text class="price">￥25.00~￥38.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"/>
+                    <text class="expain">酱香白酒500ml高度白酒</text>
+                    <view class="item_foot">
+                        <text class="price">￥24.00~￥30.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/adver1.png"/>
+                    <text class="expain">国产白酒 郎牌郎酒53度老郎酒精品</text>
+                    <view class="item_foot">
+                        <text class="price">￥25.00~￥38.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"/>
+                    <text class="expain">酱香白酒500ml高度白酒</text>
+                    <view class="item_foot">
+                        <text class="price">￥24.00~￥30.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"/>
+                    <text class="expain">酱香白酒500ml高度白酒</text>
+                    <view class="item_foot">
+                        <text class="price">￥24.00~￥30.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="load_more {{!hasMore?'':'hide'}}" bindtap="loadMore">加载更多</view>
+        <view class="no_more {{hasMore?'':'hide'}}">没有更多内容了</view>
+    </scroll-view> 
+
+    
+    <view class="toolbar_box">
+        <view class="toolbar">
+            <block wx:for="{{$toolbar$toolBar}}" wx:for-index="$toolbar$index" wx:for-item="$toolbar$item" wx:key="$toolbar$index">
+                <navigator url="{{$toolbar$item.toolPath}}" class="bar">
+                    <text class="iconfont {{$toolbar$item.toolClass}}"/>
+                    <text class="txt">{{$toolbar$item.toolText}}</text>
+                </navigator>
+            </block>
+        </view>
+    </view>

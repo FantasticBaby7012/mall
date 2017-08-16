@@ -1,0 +1,207 @@
+<style lang="less">
+	.container_search{
+		position:absolute;
+		width:100%;
+		bottom:0;
+		top:107rpx;
+	}
+	.nav_left{
+		display: inline-block;
+		width: 185rpx;
+		height: 100%;
+		background-color: #efefef;
+		position:fixed;
+	}
+	.nav_right{
+		display: inline-block;
+		background-color: #fff;
+		position: absolute;
+		left:205rpx;
+		right:0;
+	}
+	.nav_left .nav_item{
+		height:90rpx;
+		line-height:90rpx;
+		border-bottom:1px dashed #d2d2d2;
+		font-size:28rpx;
+		padding-left:50rpx;
+	}
+	.nav_left .nav_item.active{
+		background-color: #fff;
+	}
+	.good_item{
+		border-bottom: 1px solid #efefef;
+		padding: 20rpx 0;
+	}
+	.good_item .item_image{
+		width: 160rpx;
+		height: 160rpx;
+		vertical-align: bottom;
+	}
+	.item_right{
+		display:inline-block;
+		width:340rpx;
+		margin-left:20rpx;
+		padding-right:20rpx;
+	}
+	.explain{
+		font-size: 28rpx;
+	}
+	.item_foot{
+		margin-top: 20rpx;
+	}
+	.price{
+		font-size: 30rpx;
+		color: #ff5b5b;
+	}
+	.count{
+		font-size: 24rpx;
+		color: #a4a4a4;
+		float:right;
+		margin-top:10rpx;
+	}
+	.list_top{
+		height: 60rpx;
+		line-height: 60rpx;
+		background-color: #f7f7f7;
+		width: 100%;
+		padding-left: 16rpx;
+		font-size: 28rpx;
+		position: fixed;
+		top:105rpx;
+		z-index:10;
+	}
+	.good_list{
+		margin-bottom: 120rpx;
+		margin-top:60rpx;
+	}
+</style>
+<template>
+	<search></search>
+	<view class="container_search">
+		<view class="nav_left">
+			<view class="nav_item" :class="{'active': (curShow==0)}" @tap="toBlock('全部')">全部</view>
+			<view class="nav_item" :class="{'active': (curShow==1)}" @tap="toBlock('婚庆类')">婚庆类</view>
+			<view class="nav_item" :class="{'active': (curShow==2)}" @tap="toBlock('醇香类')">醇香类</view>
+			<view class="nav_item" :class="{'active': (curShow==3)}" @tap="toBlock('浓香类')">浓香类</view>
+		</view>
+		<view class="nav_right">
+			<view class="list_top">{{curBlock}}</view>
+			<view class="good_list">
+		        <repeat wx:if="{{curShow==1 || curShow==0}}" for="{{goodsList1}}" key="index" item="item" index="index">
+		            <view class="good_item">
+						<image class="item_image" src="{{item.picture}}"></image>
+						<view class="item_right">
+							<text class="explain">{{item.explain}}</text>
+							<view class="item_foot">
+								<text class="price">{{item.price}}</text>
+								<text class="count">销量：{{item.count}}</text>
+							</view>
+						</view>
+					</view>
+		        </repeat>
+		        <repeat wx:if="{{curShow==2 || curShow==0}}" for="{{goodsList2}}" key="index" item="item" index="index">
+		            <view class="good_item">
+						<image class="item_image" src="{{item.picture}}"></image>
+						<view class="item_right">
+							<text class="explain">{{item.explain}}</text>
+							<view class="item_foot">
+								<text class="price">{{item.price}}</text>
+								<text class="count">销量：{{item.count}}</text>
+							</view>
+						</view>
+					</view>
+		        </repeat>
+		        <repeat wx:if="{{curShow==3 || curShow==0}}" for="{{goodsList3}}" key="index" item="item" index="index">
+		            <view class="good_item">
+						<image class="item_image" src="{{item.picture}}"></image>
+						<view class="item_right">
+							<text class="explain">{{item.explain}}</text>
+							<view class="item_foot">
+								<text class="price">{{item.price}}</text>
+								<text class="count">销量：{{item.count}}</text>
+							</view>
+						</view>
+					</view>
+		        </repeat>
+			</view>
+		</view>
+	</view>
+</template>
+<script>
+	import wepy from 'wepy'
+    import util from "../../util/util"
+    import Search from "../../components/search"
+    export default class Goods extends wepy.page{
+        config={
+            navigationBarTitleText: '商品'
+        }
+        components = {
+          search: Search
+        }
+        data = {
+        	curShow: 0,
+        	curBlock: '全部',
+            goodsList1: [
+            	{
+            		"picture": "../../images/adver1.png",
+            		"explain": "1875 郎牌郎酒53度老郎酒精品",
+            		"price": "￥23.00~￥38.00",
+            		"count": 243
+            	}
+            ],
+            goodsList2: [
+            	{
+            		"picture": "../../images/adver1.png",
+            		"explain": "姜小白 郎牌郎酒53度老郎酒精品",
+            		"price": "￥33.00~￥38.00",
+            		"count": 4243
+            	},
+            	{
+            		"picture": "../../images/example.png",
+            		"explain": "江小白 郎牌郎酒53度老郎酒精品",
+            		"price": "￥15.00~￥28.00",
+            		"count": 2343
+            	},
+            	{
+            		"picture": "../../images/example.png",
+            		"explain": "郎酒 郎牌郎酒53度老郎酒精品",
+            		"price": "￥25.00~￥28.00",
+            		"count": 443
+            	}
+            ],
+            goodsList3: [
+            	{
+            		"picture": "../../images/adver1.png",
+            		"explain": "清酒 郎牌郎酒53度老郎酒精品",
+            		"price": "￥33.00~￥38.00",
+            		"count": 2243
+            	},
+            	{
+            		"picture": "../../images/example.png",
+            		"explain": "老白干 郎牌郎酒53度老郎酒精品",
+            		"price": "￥15.00~￥28.00",
+            		"count": 1343
+            	}
+            ]
+        }
+        methods = {
+            toBlock (arg) {
+            	this.curBlock = arg
+            	if (arg == '全部'){
+            		this.curShow = 0
+            	}else if (arg == '婚庆类') {
+            		this.curShow = 1
+            	}else if (arg == '醇香类') {
+            		this.curShow = 2
+            	}else if (arg == '浓香类') {
+            		this.curShow = 3
+            	}
+            }
+        }
+        async onLoad(option){
+            
+        }   
+
+    }
+</script>

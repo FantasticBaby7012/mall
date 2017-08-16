@@ -1,0 +1,197 @@
+<style lang="less">
+page{
+    background-color: #f3f3f3;
+    padding-bottom: 20rpx;
+}
+.list{
+    padding:30rpx 30rpx 10rpx 30rpx;
+    margin-bottom: 30rpx;
+    background-color: #fff;
+    position: relative;
+    border-bottom: 1px solid #e6e8e7;
+}
+.list .list_title{
+    font-size: 28rpx;
+    padding-left: 16rpx;
+    border-left: 6rpx solid #4fbd7b;
+}
+.item_iamge{
+    width: 100%;
+    height: 300rpx;
+}
+.item_content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30rpx;
+}
+.item_content .item{
+    width: 45%;
+    text-align: center;
+    margin-bottom: 10rpx;
+    margin-bottom: 20rpx;
+}
+.item_content .expain{
+    display: block;
+    font-size: 28rpx;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+}
+.item_foot{
+    margin-top: 6rpx;
+}
+.item_foot .price{
+    font-size: 40rpx;
+    color: #ff5b5b;
+    text-align: left;
+    float: left;
+}
+.item_foot .count{
+    font-size: 26rpx;
+    color: #a4a4a4;
+    float: right;
+    text-align: right;
+    margin-top: 10rpx;
+}
+.to_top{
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    border: 1px solid #e6e8e7;
+    background-color: #fff;
+    font-size: 24rpx;
+    line-height: 90rpx;
+    text-align: center;
+    float: right;
+    margin-right: 20rpx;
+}
+.to_top_box:after{
+    content: '';
+    display: 'block';
+    clear: both;
+}
+.scroll_view{
+    /*height: 1090rpx;*/
+}
+</style>
+<template>
+    <scroll-view class="scroll_view" scroll-y="true" scroll-top="{{scrollTop}}" bindscrolltolower="lower" bindscroll="scroll">
+        <swiper :img="imgUrls"></swiper>
+        <view class="list">
+            <text class="list_title">店长推荐</text>
+            <view class="item_content">
+                <view class="item" @tap="toDetail">
+                    <image class="item_iamge" src="../../images/example.png"></image>
+                    <text class="expain">汾酒系列【20年青花瓷镇酒</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"></image>
+                    <text class="expain">汾酒系列【20年青花瓷镇酒</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="list">
+            <text class="list_title">热销产品</text>
+            <view class="item_content">
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"></image>
+                    <text class="expain">洋河系列【洋河大曲青瓷】</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"></image>
+                    <text class="expain">洋河系列【洋河大曲青瓷】</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"></image>
+                    <text class="expain">洋河系列【洋河大曲青瓷】</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+                <view class="item">
+                    <image class="item_iamge" src="../../images/example.png"></image>
+                    <text class="expain">洋河系列【洋河大曲青瓷】</text>
+                    <view class="item_foot">
+                        <text class="price">￥54.00</text>
+                        <text class="count">销量：2543</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="to_top_box">
+            <view class="to_top" @tap="toTop">
+                <text>顶部</text>
+            </view>
+        </view>
+    </scroll-view>  
+</template>
+<script>
+    import wepy from 'wepy'
+    import util from "../../util/util"
+    import Swiper from "../../components/swiper"
+    export default class Index extends wepy.page{
+        config={
+            navigationBarTitleText: '镇酒商城'
+        }
+        components = {
+          swiper: Swiper
+        }
+        data = {
+            scrollTop: 0,
+            imgUrls: [
+              '../../images/banner1.png',
+              '../../images/banner1.png',
+              '../../images/banner1.png'
+            ]
+        }
+        methods = {
+            toDetail () {
+                wx.navigateTo({
+                  url: '../goods/detail'
+                })
+            },
+            toTop () {
+                console.log("ok")
+                this.scrollTop = 0
+            },
+            scroll (e) {
+                console.log(this.scrollTop)
+            },
+            lower (e) {
+                console.log('lower')
+            }
+        }
+        event = {
+            scroll (e) {
+                console.log(e)
+            }
+        }
+        watch = {
+            scroll (e) {
+                console.log(e)
+            }
+        }
+        async onLoad(option){
+            
+        }   
+
+    }
+</script>
